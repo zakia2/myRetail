@@ -21,7 +21,11 @@ public class ProductInfoService {
     ProductService productService;
     String api = "https://redsky.target.com/v2/pdp/tcin/";
 
-    // Method to return productInfo given an id
+    /** Service method to get product info object
+     *
+     * @param id of product
+     * @return product object
+     */
     public ProductInfo getProductInfo(String id) throws IOException {
      ProductInfo productInfo = new ProductInfo();
      Product product = productService.getProduct(id);
@@ -31,7 +35,11 @@ public class ProductInfoService {
      return productInfo;
     }
 
-    // Method to call a resource for the title of product with given id
+    /** Service method to get title of product info object
+     *
+     * @param id of product
+     * @return title of product
+     */
     public String getTitle(String id) throws IOException {
         HttpGet request = new HttpGet(api+id);
         try {

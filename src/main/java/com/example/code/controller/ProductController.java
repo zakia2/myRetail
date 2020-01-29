@@ -17,19 +17,32 @@ public class ProductController {
     @Autowired
     ProductInfoService productInfoService;
 
-    // Controller method to return product
+    /** Controller method to return product
+     *
+     * @param id of product
+     * @return product object
+     */
     @GetMapping(path ="/products/{id}", produces = "application/json")
     public Product getProduct(@PathVariable String id) {
        return productService.getProduct(id);
     }
 
-    // Controller method to return product info
+    /** Controller method to return product info object
+     *
+     * @param id of product
+     * @return product info object
+     */
     @GetMapping(path ="/products/info/{id}", produces = "application/json")
     public ProductInfo getProductInfo(@PathVariable String id) throws IOException {
         return productInfoService.getProductInfo(id);
     }
 
-    // Controller method to update product
+    /** Controller method to update product object
+     *
+     * @param id of product
+     * @param product containing values to be updated
+     * @return Updated product object
+     */
     @PutMapping(path ="/products/{id}", consumes = "application/json", produces = "application/json")
     public Product updateProduct(@PathVariable String id, @RequestBody Product product) {
         System.out.println("Inside PUT Method");
@@ -38,7 +51,8 @@ public class ProductController {
             return productService.updateProduct(product);
     }
 
-    // Health end point
+    /** Controller method to check health of app
+     */
     @GetMapping(path ="/products/health", produces = "application/json")
     public void checkHealth() {
         System.out.println("Inside HEALTh Method");
