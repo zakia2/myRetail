@@ -1,5 +1,12 @@
 The database for myRetail application is hosted on Amazon DynamoDB.
 
+
+
+In order to test the application run 
+ java -Damazon.aws.accesskey={accesskey} -Damazon.aws.secretkey={secretkey} -jar {filename}.jar
+
+
+
 In order to test the REST endpoints after running the jar application locally:
 
 1. Testing the GET /products/{id} endpoint: Use curl command
