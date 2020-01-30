@@ -13,15 +13,7 @@ myDynamoDB = t.add_resource(Table(
         AttributeDefinition(
             AttributeName="productid",
            AttributeType="S"
-        ),
-        AttributeDefinition(
-                    AttributeName="price",
-                   AttributeType="N"
-                ),
-        AttributeDefinition(
-                            AttributeName="currency",
-                           AttributeType="S"
-                        )
+        )
     ],
     KeySchema=[
         KeySchema(
